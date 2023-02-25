@@ -2,9 +2,9 @@
 import sys
 import time
 
-key = str(0)
 
-# a = 2
+key = 0
+
 a = 0
 b = 0.2
 c = 0.8
@@ -124,8 +124,8 @@ def left():
 def window():
     print("Well here we go")
     print("*You open the window and take a deep breath*")
-    print("*slap face* you can do it")
-    print("YOU.. CAN.. DO.. IT")
+    print("*slap face* you can do it " + mc_name)
+    print(mc_name + "YOU.. CAN.. DO.. IT")
     print("A rush of adrenaline rises in you and you finally decide to jump")
     print("SPLASHHHHHHHHHHHH")
     print("Your body didn't support the shock")
@@ -206,6 +206,7 @@ def knockout():
     print("Maybe instead to knock him I could ask him")
     print("Even if he’s drunk maybe he will understand")
     while True:
+        global key
         choice = input("Do you want to ask him or still knock him out? Type ask or ko ")
         if choice.lower() == "ask":
             ask()
@@ -219,27 +220,38 @@ def knockout():
             print("*You knock out the sailor*")
             print("Pfiouu it was exhausting")
             print("*You take out the keychaind and put into your pocket*")
-            global key
-            key += str(1)
+            key += 1
             print("You wall back into the hallway")
-            back()
+            return key + back()
+
+
+
         else:
             print("Please enter a valid option")
 
 
 
 def right():
+    global key
     while True:
         print("You try to open the door")
         print("*door closed*")
         print("Rahhh I need a key")
-        back()
-        if key == "1":
+        if key > 0:
+            print("Oh wait I have one")
             break
+        elif key < 1:
+            back()
 
 
     print("*you take out the keychain and open the door*")
     print("I knew it would help me")
+    print("*You see a panel filled with dust, you take it and try to dust it down to make it a little more readable*")
+    print("What is even written on this panel")
+    print("E..mer..gen..cy pa..t..h fo..r fli..g..ht c.re..w")
+    print("!!!")
+    print("Emergency path especially for flight crew!!!!")
+    print("Then they have an emergency path just for them these lazy")
 
 
 
