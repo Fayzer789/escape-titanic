@@ -1,5 +1,4 @@
 # Author : Fayzer789
-import sys
 import time
 
 
@@ -9,10 +8,9 @@ a = 0
 b = 0.2
 c = 0.8
 
-
-
-
 # Introduction
+
+
 def intro():
     time.sleep(a)
     print("zzzzzzzzzzzzzzzzzzzzzzzzzz")
@@ -39,7 +37,7 @@ def intro():
     time.sleep(a)
     print("Don't tell me")
     time.sleep(a)
-    s = ("............")
+    print("............")
     time.sleep(a)
     print("IT'S ALREADY 9 PM")
     time.sleep(a)
@@ -80,11 +78,12 @@ def intro():
         if choice == "1":
             print()
             choice1()
-        elif choice =="2":
+        elif choice == "2":
             print()
             choice2()
         else:
             print("Please enter a valid option")
+
 
 def choice1():
     time.sleep(a)
@@ -93,6 +92,8 @@ def choice1():
     print("*You decided to still going to the rescue boats*")
     print("Oh damn I don't know the plan of this ship")
     back()
+
+
 def back():
     print("There are two doors in front of you")
     while True:
@@ -147,18 +148,19 @@ def walk():
                 else:
                     print("Please enter a valid option")
 
-
         elif choice.lower() == "no":
             while True:
                 choice = input("Are you sure? you're gonna walk back to the hallway. Type Yes or No ")
                 if choice.lower() == "yes":
-                        print("Maybe it's not a great idea to go to this door")
-                        print("You decided to walk back to the hallway")
-                        left()
+                    print("Maybe it's not a great idea to go to this door")
+                    print("You decided to walk back to the hallway")
+                    left()
                 else:
                     print("Please enter a valid option")
         else:
             print("Please enter a valid option")
+
+
 def ask():
     print("Hello sir it was to know if I-")
     print("WHAT DO YOU WANTTT")
@@ -175,11 +177,12 @@ def ask():
     while True:
         choice = input("Run away or try to fight back? Type run or fight ")
         if choice == "run":
-                run()
+            run()
         elif choice == "fight":
-                fight()
+            fight()
         else:
             print("Please enter a valid option")
+
 
 def run():
     print("Sorry to bother you I’m leaving")
@@ -189,6 +192,7 @@ def run():
     print("He finally catch you up takes you with one arm and throw you away through the window")
     dead_screen()
 
+
 def fight():
     print("YOU KNOW WHAT MAN YOU DON'T EVEN AFRAID ME")
     print("COME ON")
@@ -197,6 +201,7 @@ def fight():
     print("PAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF")
     print("He hit you in the face so hard that you had a heart attack")
     dead_screen()
+
 
 def knockout():
     print("He hasn’t seen me yet and drunk as he is will only bring trouble")
@@ -222,28 +227,26 @@ def knockout():
             print("*You take out the keychaind and put into your pocket*")
             key += 1
             print("You wall back into the hallway")
-            return key + back()
-
-
+            back()
 
         else:
             print("Please enter a valid option")
 
 
-
 def right():
     global key
-    while True:
-        print("You try to open the door")
-        print("*door closed*")
-        print("Rahhh I need a key")
-        if key > 0:
-            print("Oh wait I have one")
-            break
-        elif key < 1:
-            back()
+    print("You try to open the door")
+    print("*door closed*")
+    print("Rahhh I need a key")
+    if key == 0:
+        back()
+
+    elif key == 1:
+        print("Oh wait I have one")
+        sos_door()
 
 
+def sos_door():
     print("*you take out the keychain and open the door*")
     print("I knew it would help me")
     print("*You see a panel filled with dust, you take it and try to dust it down to make it a little more readable*")
@@ -252,7 +255,6 @@ def right():
     print("!!!")
     print("Emergency path especially for flight crew!!!!")
     print("Then they have an emergency path just for them these lazy")
-
 
 
 def choice2():
@@ -269,6 +271,7 @@ def dead_screen():
     print("        *            You are DEAD               *")
     print("        *                                       *")
     print("        *****************************************")
+
 
 def end_screen():
     print("        *****************************************")
@@ -288,12 +291,11 @@ mc_name = input("What's your name? ")
 time.sleep(a)
 print("Welcome", mc_name, "You are currently in the TITANIC so don't worry everything's gonna be fine :)  ")
 time.sleep(a)
-start_game = input("Are you ready ? ")
 while True:
+    start_game = input("Are you ready ? ")
     if start_game.lower() == "no" or start_game == "No":
         print("Okay maybe next time")
     elif start_game.lower() == "yes" or start_game == "Yes":
         intro()
     else:
         print("Please enter a valid option")
-
